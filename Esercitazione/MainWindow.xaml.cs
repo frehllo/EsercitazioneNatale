@@ -31,7 +31,7 @@ namespace Esercitazione
             int voto = int.Parse(txt_voto.Text);
             if (voto < 0 || voto > 10)
             {
-                lbl_ex.Content = "Il valore inserito non è valido";                
+                lbl_ex.Content = "Il valore inserito non è valido ";                
             }else
             {
                 lbl_ex.Content = "Stampato correttamente";
