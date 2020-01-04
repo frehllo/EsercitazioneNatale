@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace Esercitazione
 {
@@ -20,23 +21,50 @@ namespace Esercitazione
     /// </summary>
     public partial class MainWindow : Window
     {
+        string filei = @"invalidi.txt";
+        string filev = @"validi.txt";
+        string voti = @"voti.txt";
+        string prova = @"prova.txt";
         public MainWindow()
         {
             InitializeComponent();
-        }
+            if(File.Exists(filei))
+                using (StreamReader readerinvalido = new StreamReader(filei))
+                {
+                    using (StreamWriter writernumeri = new StreamWriter(voti))
+                    {
+                        writernumeri.WriteLine("VOTI");
+                        string linei = readerinvalido.ReadLine();
+                        while ((linei = readerinvalido.ReadLine()) != null)
+                        {
+                            int found = 0;                                                        
+                                Console.WriteLine(linei);
+                            {
+                                found = linei.IndexOf(",");
+                                writernumeri.WriteLine("{0}", linei.Substring(found+1));
+                            }
+                        }
+                    }
 
-        private void Btn_stampa_Click(object sender, RoutedEventArgs e)
-        {
-            string nome = (txt_nome.Text);
-            int voto = int.Parse(txt_voto.Text);
-            if (voto < 0 || voto > 10)
-            {
-                lbl_ex.Content = "Il valore inserito non è valido";                
-            }else
-            {
-                lbl_ex.Content = "Stampato correttamente";
-            }
 
-        }
+                    using (StreamReader readernumeri = new StreamReader(voti))
+                    {
+                        string linen = readernumeri.ReadLine();
+                        double max = 0;
+                        while ((linen = readernumeri.ReadLine()) != null)
+                        {                            
+                            double n = double.Parse(linen);                            
+                            if (n>max)
+                            {
+                                max = n;
+                            }                            
+                        }
+                        lbl_max.Content = $"Il voto più alto è stato {max}";
+                    }
+
+
+                    
+                }                            
+        }   
     }
 }

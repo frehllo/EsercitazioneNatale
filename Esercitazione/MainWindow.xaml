@@ -5,14 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Esercitazione"
         mc:Ignorable="d"
-        Title="MainWindow" Height="230" Width="540">
+        Title="MainWindow" Height="500" Width="400">
     <Grid>
-        <TextBox Name="txt_nome" HorizontalAlignment="Left" Height="33" Margin="65,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146"/>
-        <TextBox Name="txt_voto" HorizontalAlignment="Left" Height="33" Margin="289,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="146"/>
-        <Label Content="Alunno" HorizontalAlignment="Left" Margin="65,38,0,0" VerticalAlignment="Top" Width="146"/>
-        <Label Content="Voto" HorizontalAlignment="Left" Margin="289,38,0,0" VerticalAlignment="Top" Width="146"/>
-        <Button Name="btn_stampa"  Content="Stampa" HorizontalAlignment="Left" Margin="182,108,0,0" VerticalAlignment="Top" Width="132" Height="40" Click="Btn_stampa_Click"/>
-        <Label Name="lbl_ex" Content="" IsEnabled="False" HorizontalAlignment="Left" Margin="10,163,0,0" VerticalAlignment="Top" Width="248"/>
-
+        <ListBox Name="lbx_cronologia" HorizontalAlignment="Left" Height="298" Margin="33,80,0,0" VerticalAlignment="Top" Width="317"/>
+        <Label Name="lbl_max" Content="" HorizontalAlignment="Left" Margin="33,404,0,0" VerticalAlignment="Top" Height="30" Width="317" FontFamily="Source Sans Pro Black" FontSize="18"/>
+        <Label Content="LISTA" HorizontalAlignment="Left" Margin="33,31,0,0" VerticalAlignment="Top" Width="317" Height="44" FontSize="22" FontFamily="Source Sans Pro Black"/>
     </Grid>
 </Window>
